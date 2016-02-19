@@ -1,0 +1,47 @@
+<%= form_for(@field) do |f| %>
+  <% if @field.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@field.errors.count, "error") %> prohibited this field from being saved:</h2>
+
+      <ul>
+      <% @field.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :input %><br>
+    <%= f.select :input, Field.inputs.map {|r| [r[:name],r[:input]] } %>
+  </div>
+
+  <% if params[:action] == 'edit' or params[:action] == 'update' %>
+    <div id="field-combo-box-section">
+      <a id="more-inputs">more option inputs</a>
+      <% for option in @field.combo_box_option.split(',') %>
+        <div id="field-combo-box"  class="field">
+          <%= f.label :combo_box_option %><br>
+          <%= text_field_tag("field[combo_box_option][]", option) %>
+        </div>
+    </div>
+    <% end %>
+  <% else %>
+    <div id="field-combo-box-section" class="hide">
+      <a id="more-inputs">more option inputs</a>
+      <div id="field-combo-box" class="field">
+        <%= f.label :combo_box_option %><br>
+        <%= text_field_tag("field[combo_box_option][]") %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

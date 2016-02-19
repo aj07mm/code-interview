@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @contact.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @contact.email %>
+</p>
+
+<% custom_fields.each do |field| %>
+	<p>
+	  <strong><%= field.name.capitalize %>:</strong>
+	  <%= get_field_value(field, @contact) %>
+	</p>
+<% end %>
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>

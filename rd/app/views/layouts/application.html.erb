@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rd</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<ul>
+		<% if user_signed_in? %>
+			<li><a href="/">Home</a></li>
+			<li><a href="/contacts">Contacts</a></li>
+			<li><a href="/fields">Fields</a></li>
+			<li><a href="/sign_out">Logout</a></li>
+		<% else %>
+			<li><a href="/sign_in">Login</a></li>
+		<% end %>
+	</ul>
+
+<%= yield %>
+
+</body>
+</html>
