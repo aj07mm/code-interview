@@ -1,0 +1,4 @@
+#files created by application in tests and as a result
+test.csv
+links.csv
+*.pyc
