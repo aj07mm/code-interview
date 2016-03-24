@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Desafio WPensar</title>
+  <base href="/">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+  
+  <script src="js/app.js"></script>
+  <script src="js/factories.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/dist/sweetalert.min.js"></script>
+  <script src="js/dist/dirPagination.js"></script>
+
+</head>
+<body ng-app="myapp">
+
+  <!-- Primary Page Layout -->
+  <div class="container">
+    <!-- ajax loader -->
+    <div class="row loading-spiner-holder" data-loading >
+      <div class="row loading-spiner">
+        <img src="images/ajax-loader.gif" />
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a class="navbar-link" ui-sref="products">Products</a>
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link" ui-sref="purchases">Purchases</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+      <div ui-view class="ui-view-custom twelve column">
+        <h4>Desafio WPensar</h4>
+        <p>Porque quero trabalhar num ambiente MERITOCRÁTICO. Aqui os melhores são reconhecidos sempre!</p>
+      </div>
+  </div>
+
+<!-- End Document -->
+</body>
+</html>

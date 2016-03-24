@@ -1,0 +1,23 @@
+<div ng-controller="productCtrl">
+	<div class="row">
+		<h3 class="right">Product</h3>
+	</div>
+	<form ng-submit="create(product)">
+	  <div class="row">
+	    <div class="six columns">
+	      <label for="name">Name</label>
+	      <input ng-model="product.name" ng-change="clearAttributes(product)" class="u-full-width" type="text" id="name">
+	    </div>
+	    <div class="three columns">
+	      <label for="price">Price</label>
+	      <input ng-model="product.price" ng-change="calcAveragePrice(product)" class="u-full-width" type="number" step="any" min="0" id="price">
+	    </div>
+	    <div class="three columns">
+	      <label for="price">Avg Price</label>
+	      <input class="gray" disabled ng-model="product.average_price" class="u-full-width" type="number" step="any" min="0" id="average_price">
+	    </div>
+	  </div>
+	  <input class="button-primary" type="submit" value="Create">
+	</form>
+	</table>
+</div>

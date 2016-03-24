@@ -1,0 +1,33 @@
+<div ng-controller="purchaseCtrl">
+	<div class="row">
+		<a ui-sref="purchasesNew" class="resource-title right">
+			<i class="ion-android-add-circle" title="Create"></i>
+		</a>
+		<h3 class="right">Purchase</h3>
+	</div>
+	<table class="u-full-width">
+	  <thead>
+	    <tr>
+	      <th>Name</th>
+	      <th>Quantity</th>
+	      <th>Total Price</th>
+	      <th></th>
+	      <th></th>
+	      <th></th>
+	      <th>Cart uuid</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr style="color:{{ hashStringToColor(purchase.cart_uuid) }}" dir-paginate="purchase in purchases | itemsPerPage: 10">
+	      <td>{{ getProduct(purchase.product).name }}</td>
+	      <td>{{ purchase.quantity }}</td>
+	      <td>{{ purchase.total_price }}</td>
+	      <td><a class="button" ui-sref="purchasesView({purchaseId: purchase.id})">View</a></td>
+	      <td><a class="button" ui-sref="purchasesUpdate({purchaseId: purchase.id})">Update</a></td>
+	      <td><a class="button" ui-sref="purchasesDelete({purchaseId: purchase.id})">Delete</a></td>
+	      <td class="cart-title">{{ purchase.cart_uuid }}</td>
+	    </tr>
+	  </tbody>
+	</table>
+	<dir-pagination-controls class="inline"></dir-pagination-controls>
+</div>

@@ -1,0 +1,31 @@
+<div ng-controller="productCtrl">
+	<div class="row">
+		<a ui-sref="productsNew" class="resource-title right">
+			<i class="ion-android-add-circle" title="Create"></i>
+		</a>
+		<h3 class="right">Product</h3>
+	</div>
+	<table class="u-full-width">
+	  <thead>
+	    <tr>
+	      <th>Name</th>
+	      <th>Price</th>
+	      <th>Average Price</th>
+	      <th></th>
+	      <th></th>
+	      <th></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr dir-paginate="product in products | itemsPerPage: 10">
+	      <td>{{ product.name }}</td>
+	      <td>{{ product.price }}</td>
+	      <td>{{ product.average_price }}</td>
+	      <td><a class="button" ui-sref="productsView({productId: product.id})">View</a></td>
+	      <td><a class="button" ui-sref="productsUpdate({productId: product.id})">Update</a></td>
+	      <td></td>
+	    </tr>
+	  </tbody>
+	</table>
+	<dir-pagination-controls class="inline"></dir-pagination-controls>
+</div>

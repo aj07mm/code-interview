@@ -1,0 +1,28 @@
+<div ng-controller="purchaseCtrl">
+	<div class="row">
+		<h3 class="right">Purchase</h3>
+	</div>
+	<form class="update-form" ng-submit="update(purchase)">
+	  <div class="row">
+		<div class="five columns">
+		  <label for="product">Product</label>
+		  <select ng-model="purchase.product" ng-change="clearAttributes(purchase)" name="purchase.product" class="u-full-width" ng-options="product.id as product.name for product in products"></select>
+		</div>
+		<div class="two columns">
+		  <label for="quantity">quantity</label>
+		  <input ng-model="purchase.quantity" ng-change="calcTotalPartial(purchase);" class="u-full-width" type="number" step="any" min="0" id="quantity">
+		</div>
+		<div class="two columns">
+		  <label for="quantity">product price</label>
+		  <input disabled class="u-full-width" type="number" step="any" min="0" id="quantity" value="{{ getProduct(purchase.product).price }}">
+		</div>
+		<div class="two columns">
+		  <label for="quantity">total price</label>
+		  <input disabled class="gray" ng-model="purchase.total_price" class="u-full-width" type="number" step="any" min="0" id="total_price">
+		</div>
+		<input ng-model="purchase.cart_uuid" type="hidden">
+	  </div>
+	  <input class="button-primary" type="submit" value="Edit">
+	</form>
+	</table>
+</div>
