@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Desafio WPensar</title>
+  <base href="/">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- <link rel="stylesheet" href="css/custom.css"> -->
+
+  <!-- Bower Dependencies -->
+  <!-- <link rel="stylesheet" href="index.css"> -->
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+
+</head>
+<body ng-app="myapp">
+
+  <!-- Primary Page Layout -->
+  <div class="container" ng-controller="paymentCtrl">
+    <!-- ajax loader -->
+    <div class="row loading-spiner-holder" data-loading >
+      <div class="row loading-spiner">
+        <!-- <img src="images/ajax-loader.gif" /> -->
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a class="navbar-link">Microapps</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+      <div class="ui-view-custom twelve column">
+        <form ng-submit="send(transaction)">
+          <optgroup>
+            <div class="row">
+              <label>Amount</label>
+              <input ng-model="transaction.expiryData" name="expiry-date" placeholder="Expiry Date" type="text">
+            </div>
+          </optgroup>
+          <div class="row">
+            <label>Brand</label>
+            <select ng-model="purchase.brand" ng-change="clearAttributes(purchase)" name="purchase.brand" class="u-full-width" ng-options="brand.id as brand.name for brand in brands"></select>
+          </div>
+
+          <div class="row">
+            <div class="five columns">
+              <label>Card Number</label>
+              <input ng-model="transaction.cardNumber" name="card-number" placeholder="Card Number" type="text">
+            </div>
+
+            <div class="two columns">
+              <label>Expiry Date</label>
+              <input ng-model="transaction.expiryData" name="expiry-date" placeholder="Expiry Date" type="text">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="five columns">
+              <label>Card Holder</label>
+              <input ng-model="transaction.cardHolder" name="card-holder" placeholder="Card Holder" type="text">
+            </div>
+
+            <div class="two columns">
+              <label>CVV</label>
+              <input ng-model="transaction.cvv" name="cvv" placeholder="CVV" maxlength="3" type="text">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="eight columns right">
+              <input class="button button-primary right" type="submit">
+            </div>
+          </div>
+
+        </form>
+      </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="Users/aj07mm/Desktop/microapps/www/js/app.js"></script>
+  <script src="Users/aj07mm/Desktop/microapps/www/js/controllers.js"></script>
+  <script src="Users/aj07mm/Desktop/microapps/www/js/factories.js"></script>
+  <script src="Users/aj07mm/Desktop/microapps/www/js/services.js"></script>
+  <script src="Users/aj07mm/Desktop/microapps/www/js/directives.js"></script>
+<!-- End Document -->
+</body>
+</html>

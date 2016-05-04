@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Microapps</title>
+  <base href="/">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- <link rel="stylesheet" href="css/custom.css"> -->
+
+  <!-- Bower Dependencies -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+
+</head>
+<body ng-app="myapp">
+
+  <nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a class="navbar-link">Microapps</a>
+          </li>
+        </ul>
+      </div>
+  </nav>
+  <!-- Primary Page Layout -->
+  <div ng-show="getState() == 'checkout'" class="container" ng-controller="checkoutCtrl">
+    <!-- ajax loader -->
+      <div class="row loading-spiner-holder" data-loading >
+        <div class="row loading-spiner">
+          <!-- <img src="images/ajax-loader.gif" /> -->
+        </div>
+      </div>
+      <div class="ui-view-custom twelve column">
+        <h4 class="section-title">Checkout</h4>
+        <form ng-submit="send(transaction)">
+          <div class="row">
+            <div class="six columns">
+              <label>Amount:</label>
+              <input ng-model="transaction.amount" name="amount" placeholder="amount" type="text" required min="0" max="100">
+            </div>
+            <div class="six columns">
+              <label>Currency:</label>
+              <select ng-model="purchase.currency" ng-change="clearAttributes(purchase)" name="purchase.currency" class="u-full-width" ng-options="currency.id as currency.name for currency in currencies" required></select>
+              
+            </div>
+          </div>
+          
+          <div class="row">
+            <label>Payment brand:</label>
+            <select ng-model="purchase.brand" ng-change="clearAttributes(purchase)" name="purchase.brand" class="u-full-width" ng-options="brand.id as brand.name for brand in brands" required></select>
+          </div>
+          <div class="row">
+            <label>Payment type:</label>
+            <select ng-model="purchase.type" ng-change="clearAttributes(purchase)" name="purchase.type" class="u-full-width" ng-options="type.id as type.name for type in types" required></select>
+          </div>
+
+          <div class="row">
+            <!-- <div class="six columns">
+              <label>merchantTransactionId:</label>
+              <input ng-model="transaction.merchantTransactionId" name="merchantTransactionId" placeholder="merchantTransactionId" type="text" required>
+            </div> -->
+            <!-- <div class="six columns">
+              <label>Descriptor:</label>
+              <input ng-model="transaction.descriptor" name="descriptor" placeholder="descriptor" type="text">
+              <span>(Optional)</span>
+            </div> -->
+          </div>
+
+          <div class="row">
+            <input class="button button-primary right" type="submit" value="Next">
+          </div>
+
+          <!-- <div class="row">
+            <label>merchantInvoiceId:</label>
+            <input ng-model="transaction.merchantInvoiceId" name="merchantInvoiceId" placeholder="merchantInvoiceId" type="hidden"> 
+            <span>(Optional)</span>
+          </div> -->
+
+        </form>
+      </div>
+  </div>
+  <div ng-show="getState() == 'payment'" class="container" ng-controller="paymentCtrl">
+    <!-- ajax loader -->
+      <div class="row loading-spiner-holder" data-loading >
+        <div class="row loading-spiner">
+          <!-- <img src="images/ajax-loader.gif" /> -->
+        </div>
+      </div>
+      <div class="ui-view-custom twelve column">
+        <h4 class="section-title">Payment</h4>
+        <form ng-submit="send(transaction)">
+          <div class="row">
+            <div class="six columns">
+              <label>Amount:</label>
+              <input ng-model="transaction.amount" name="amount" placeholder="amount" type="text" required min="0" max="100">
+            </div>
+            <div class="six columns">
+              <label>Currency:</label>
+              <select ng-model="purchase.currency" ng-change="clearAttributes(purchase)" name="purchase.currency" class="u-full-width" ng-options="currency.id as currency.name for currency in currencies" required></select>
+              
+            </div>
+          </div>
+          
+          <div class="row">
+            <label>Payment brand:</label>
+            <select ng-model="purchase.brand" ng-change="clearAttributes(purchase)" name="purchase.brand" class="u-full-width" ng-options="brand.id as brand.name for brand in brands" required></select>
+          </div>
+          <div class="row">
+            <label>Payment type:</label>
+            <select ng-model="purchase.type" ng-change="clearAttributes(purchase)" name="purchase.type" class="u-full-width" ng-options="type.id as type.name for type in types" required></select>
+          </div>
+
+          <div class="row">
+            <!-- <div class="six columns">
+              <label>merchantTransactionId:</label>
+              <input ng-model="transaction.merchantTransactionId" name="merchantTransactionId" placeholder="merchantTransactionId" type="text" required>
+            </div> -->
+            <!-- <div class="six columns">
+              <label>Descriptor:</label>
+              <input ng-model="transaction.descriptor" name="descriptor" placeholder="descriptor" type="text">
+              <span>(Optional)</span>
+            </div> -->
+          </div>
+
+          <div class="row">
+            <input class="button button-primary right" type="submit" value="Next">
+          </div>
+
+          <!-- <div class="row">
+            <label>merchantInvoiceId:</label>
+            <input ng-model="transaction.merchantInvoiceId" name="merchantInvoiceId" placeholder="merchantInvoiceId" type="hidden"> 
+            <span>(Optional)</span>
+          </div> -->
+
+        </form>
+      </div>
+  </div>
+  <script src="index.min.js"></script>
+<!-- End Document -->
+</body>
+</html>
