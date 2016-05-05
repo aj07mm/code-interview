@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load helpers %}
+
+{% group_required user 'account_manager' as is_user_account_manager %}
+{% get_transaction_operation transaction as is_ %}
+
+{% block content %}
+	<h3 class="right">{{ title }}</h3>
+	<div class="row">
+		<table class="twelve columns">
+			<tr>
+				<th>Client Cod</th>
+				<th>Client Name</th>
+				<th>CPF</th>
+				<th>Operation</th>
+				<th>Amount</th>
+				<th>Created at</th>
+			</tr>
+			{% for transaction in transactions %}
+			<tr>
+				<td>{{ transaction.account.client.id }}</td>
+				<td>{{ transaction.account.client.user }}</td>
+				<td>{{ transaction.account.client.cpf }}</td>
+				<td>{% get_transaction_operation transaction %}</td>
+				<td>{{ transaction.amount }}</td>
+				<td>{{ transaction.created_at }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	<div class="pagination">
+	    <span class="step-links">
+	        {% if transactions.has_previous %}
+	            <a href="?page={{ transactions.previous_page_number }}">previous</a>
+	        {% endif %}
+
+	        <span class="current">
+	            Page {{ transactions.number }} of {{ transactions.paginator.num_pages }}.
+	        </span>
+
+	        {% if transactions.has_next %}
+	            <a href="?page={{ transactions.next_page_number }}">next</a>
+	        {% endif %}
+	    </span>
+	</div>
+{% endblock content %}

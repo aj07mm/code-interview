@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+	
+	<div class="row">
+		<a style="margin-top: 11px;display: inline-block;" href="/account/create" class="resource-title right">
+			<i class="ion-android-add-circle" title="Create"></i>
+		</a>
+		<h6 style="display:inline-block">
+			<strong>Total Balance:</strong> 
+			<span>{{ total_balance }}</span>
+		</h6>
+		<h3 class="right">{{ title }}</h3>
+	</div>
+	
+	<div class="row">
+		<table class="twelve columns">
+			<tr>
+				<th>Balance</th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+			{% for account in accounts %}
+			<tr>
+				<td>{{ account.balance }}</td>
+				<td><a class="button" href="/account/{{ account.id }}/detail">Detail</a></td>
+				<td><a class="button" href="/account/{{ account.id }}/deposit">Deposit</a></td>
+				<td><a class="button" href="/account/{{ account.id }}/withdraw">Withdraw</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	
+
+
+
+<div class="pagination">
+    <span class="step-links">
+        {% if accounts.has_previous %}
+            <a href="?page={{ accounts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ accounts.number }} of {{ accounts.paginator.num_pages }}.
+        </span>
+
+        {% if accounts.has_next %}
+            <a href="?page={{ accounts.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock content %}

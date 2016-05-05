@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h3 class="right">{{ title }}</h3>
+	<div class="row">
+		<table class="twelve columns">
+			<tr>
+				<th>Account Cod</th>
+				<th>Client</th>
+				<th>Balance</th>
+				<th>Created At</th>
+			</tr>
+			{% for account in accounts %}
+			<tr>
+				<td>{{ account.id }}</td>
+				<td>{{ account.client.user }}</td>
+				<td>{{ account.balance }}</td>
+				<td>{{ account.created_at }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	<div class="pagination">
+	    <span class="step-links">
+	        {% if accounts.has_previous %}
+	            <a href="?page={{ accounts.previous_page_number }}">previous</a>
+	        {% endif %}
+
+	        <span class="current">
+	            Page {{ accounts.number }} of {{ accounts.paginator.num_pages }}.
+	        </span>
+
+	        {% if accounts.has_next %}
+	            <a href="?page={{ accounts.next_page_number }}">next</a>
+	        {% endif %}
+	    </span>
+	</div>
+{% endblock content %}

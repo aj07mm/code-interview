@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load helpers %}
+
+{% block content %}
+	<h3 class="right">{{ title }}</h3>
+	<div class="row">
+		<table class="twelve columns">
+			<tr>
+				<th>Total</th>
+				<th>Created at</th>
+			</tr>
+			{% for transaction in transactions %}
+			<tr>
+				<td>{{ transaction.total }}</td>
+				<td>{{ transaction.day }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	<div class="pagination">
+	    <span class="step-links">
+	        {% if transactions.has_previous %}
+	            <a href="?page={{ transactions.previous_page_number }}">previous</a>
+	        {% endif %}
+
+	        <span class="current">
+	            Page {{ transactions.number }} of {{ transactions.paginator.num_pages }}.
+	        </span>
+
+	        {% if transactions.has_next %}
+	            <a href="?page={{ transactions.next_page_number }}">next</a>
+	        {% endif %}
+	    </span>
+	</div>
+{% endblock content %}

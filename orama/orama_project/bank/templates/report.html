@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="row">
+		<h3 class="right">{{ title }}</h3>
+	</div>
+	<div class="row">
+		<h5 style="text-decoration: underline;"class="">Account</h5>
+	</div>
+	<div class="row">
+		<ul>
+			<li><a href="/report/account/transaction/">All Operations</a></li>
+			<li><a href="/report/account/balance">All Balances</a></li>
+			<li><a href="/report/account/transaction/deposit">Deposits by day</a></li>
+			<li><a href="/report/account/transaction/withdraw">Withdraws by day</a></li>
+		</ul>
+	</div>
+{% endblock content %}

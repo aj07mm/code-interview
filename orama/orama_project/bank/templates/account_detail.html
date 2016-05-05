@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>{{ title }}</h1>
+	<div class="row">
+		<div class="twelve columns">
+			<ul>
+				<li>{{ instance.id }}</li>
+				<li>{{ instance.balance }}</li>
+				<li>{{ instance.client.user }}</li>
+			</ul>
+		</div>
+	</div>
+{% endblock content %}
