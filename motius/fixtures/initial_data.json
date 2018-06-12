@@ -1,0 +1,148 @@
+[
+{
+    "model": "auth.group",
+    "fields": {
+        "name": "Guest",
+        "permissions": [
+            [
+                "read_name_article",
+                "motius",
+                "article"
+            ]
+        ]
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$100000$jzaZoCPAnkqM$gGFuNnGTOuIC6IMUQoVG5cJaQ5srtpMEeAk8wY3kgic=",
+        "last_login": "2018-03-11T17:52:01.344",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@admin.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2018-03-11T17:51:09.838",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$100000$FfLIyeII7agp$R7K7Bj2zuYKogIc0SkFYa4TD73OFO2CZvgKEIRqnoyE=",
+        "last_login": "2018-03-11T17:52:24.236",
+        "is_superuser": false,
+        "username": "staff",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2018-03-11T17:51:29",
+        "groups": [
+            [
+                "Guest"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ntdvgs3g9409y23ckunqwgwo7un81ilo",
+    "fields": {
+        "session_data": "NjdjMzBkYjhjMTE4ZDk0OGIxNmNlNTBlNmQxY2I0Y2MyOGNhNzYyNDp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI3OTMxYmJmMjE5ZGVkMGE3ZTU2NWRjMmY3YzFlNDQ3OWEyZTkzM2U0In0=",
+        "expire_date": "2018-03-25T17:52:24.241"
+    }
+},
+{
+    "model": "sites.site",
+    "fields": {
+        "domain": "example.com",
+        "name": "example.com"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2018-03-11T17:51:21.852",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "object_id": "1",
+        "object_repr": "Guest",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2018-03-11T17:51:29.608",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "2",
+        "object_repr": "staff",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2018-03-11T17:51:38.077",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "2",
+        "object_repr": "staff",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"is_staff\", \"groups\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2018-03-11T17:52:13.036",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "motius",
+            "article"
+        ],
+        "object_id": "1",
+        "object_repr": "Foobar 123",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "motius.article",
+    "pk": 1,
+    "fields": {
+        "name": "Foobar 123",
+        "author": "foobar tao"
+    }
+}
+]
