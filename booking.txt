@@ -1,0 +1,394 @@
+booking
+
+1. Balanced parenthesis
+Create function that will determine are the parenthesis balanced in a given string
+boolean isBalanced(string)
+a(bcd)d => true
+(kjds(hfkj)sdhf => false
+(sfdsf)(fsfsf => false
+{[]}() => true
+{[}] => false
+2.
+Sort the content of the a file based on second field, e.g.
+Input file:
+Jervie,12,M
+Jaimy,11,F
+Tony,23,M
+Janey,11,F
+Output file:
+Jaimy,11,F
+Janey,11,F
+Jervie,12,M
+Tony,23,M
+don’t worry about open file, close file etc
+1Gb for memory but 4Gb for file
+
+interview Questions
+
+How do you do a OO design on list of animals in the Zoo ?  
+	animal class and extends
+
+Given a integer , return corresponding ASCII char representation without using language building in feature.
+
+ex. input interger 1234, return "1234" in string or characters  
+
+num = 1234
+result=''
+while (num &gt; 0):
+    rem = num % 10
+    result = str(rem) + result
+    num = int(num / 10)
+print(result)
+
+
+What a fibonacci function which return N th position number both in recursive and loop, also give the explanation on both implementation on their time efficiency.  
+
+What is HashMap ? Give the comparison on HashMap and TreeMap, that is the efficiency on their intersection and traverse.  
+	http://javarevisited.blogspot.in/2015/08/difference-between-HashMap-vs-TreeMap-vs-LinkedHashMap-Java.html
+
+
+Merchant Model : In this model, hotels sell rooms to OTAs in bulk at discounted or wholesale prices. The OTAs then sell them to customers at a markup price. This is the most commonly used model, and it benefits both parties. Like Expedia follows this model. Actually Expedia follows both models.
+
+Agent Model : This is a commission-based model wherein hotels give OTAs commissions based on business bought. In this model, the hotels list their services, and the OTAs don’t have to buy anything up front. This is beneficial for hotels, as it gives them the freedom to price their rooms as per the demand scenario. Booking.com follows this.
+
+Interview Questions
+
+'''
+We want to implement a feature to suggest to users the cheapest hotel that is more popular than the one they are looking at.
+
+Write a function that given an array of hotels, sorted by their popularity returns a map from the hotel ids that associates each hotel with the cheapest hotel that is more popular than the one in question.
+
+if there is no hotel that is cheaper and more popular… 
+
+Interview Questions
+
+You have a function f(p) that returns an array of linked pages e.g f(homepage) = {page1, page2, page3}. Or f(page1) = {page4, page5}. If there is no linked pages function will return null. And we say one site is a good site if we can get to any page of that site in a less than 6 clicks. The task was to write a function that will check is it a good site or not using f(p).  
+
+Interview Questions
+
+The architecture interview was about describing the system I'm currently working on, and analyzing the failure points.
+
+http://django-best-practices.readthedocs.io/en/latest/applications.html
+
+
+How Booking get revenue?
+
+
+Simple file reading question with sorting data  
+
+Sequence of robot moves and find circular loops in given moves sequence. sequence = "<<>>>>^v^v>><<" , < WEST, > EAST, ^ NORTH, v SOUTH. ^v this is a circular loop. find all such loops in a moves sequence. 
+
+return the longest sequence in array (a,a+1,a+2,...)
+
+
+determine the type of polygon,  
+
+
+Q: Count number of islands in a matrix.  
+
+Interview Questions
+
+1- (Coding test at hackerrank) Specify types of the polygons (square, rectangle, polygon). They didn't provide the number of lines, and negative numbers should be considered as polygons, and square shouldn't be considered as rectangle.  
+1 Answer
+2- (Coding test at hackerrank) You have a list of words and a list of hotel reviews, try to sort the hotels based on the number of words from the first list that is exist in the each review. if an hotel has maximum number of 4 words then it should be the highest in the sorting..  
+1 Answer
+3- (Coding test at hackerrank) You have time-stamps (mentioned as integers), which represents phone call begin and end to booking.com call center. find the number of overlaps in calls that suggests to add more call center agents.  
+1 Answer
+- (Phone call coding interview). You have two lists, the first contain larger words, write a method that finds if the anagram from the second list's word in the first list's word.  
+2 Answers
+- (Phone call coding interview) calculate the complexity of the previous function. They gave me hints and later they considered my answer as weak.  
+2 Answers
+
+interview Questions
+
+Given an array of words as NSStrings you should return another array of NSStrings, each containing words that are mutual anagrams  
+1 Answer
+We have the interface for a class Person which has settable firstname, middlename and lastname properties.
+It also has a fullname read-only property, which should return the person's name  
+1 Answer
+Identify whether four sides can form a square, a rectangle or neither.  
+1 Answer
+Given an array of NSNumbers output a delta encoding for the sequence  
+1 Answer
+Share on Facebook
+Share on Twitter
+Share via Email
+Copy Link
+
+Interview Questions
+
+Algorithms questions mostly about string. Can be solved by using sliding window technique or tries.  
+Answer Question
+System design question focuses on how I can design a data intensive system, handle fault and compromise between performance and UX.  
+Answer Question
+
+Interview Questions
+
+
+We have a log file, can grow pretty big.
+Each line is a trace-log, and the first field is the RequestID.
+We need to scan the file, and print all the logs for requests which resulted in error ..
+
+001 <timestamp> BEGIN
+001 <timestamp> fetched from db
+001 <timestamp> some processing ..
+002 <timestamp> BEGIN ..
+002 <timestamp> fetched from db
+001 <timestamp> returned success
+003 <timestamp> BEGIN
+001 <timestamp> END
+003 <timestamp> some work
+002 <timestamp> ERROR
+003 <timestamp> some other work  
+
+Interview Questions
+
+Stack implementation (thread safe)  
+1 Answer
+Lifecycle of views and windows for iOS. View Controller management etc.  
+1 Answer
+
+Interview Questions
+
+Q: Dynamic programming question about coin change, expected result was minimum number of coins with the coin types  
+
+1. Identify whether there exists a pair of numbers in an array such that their sum is equal to N
+
+
+How can you validate an xml file?  
+
+Some examples:
+ - a variation of matching parenthesis in a string
+ - a variation of determining if a string is an anagram of another
+ - determining if an integer list is sorted
+ - the 2-sum problem
+
+Interview Questions
+
+Given the following list of objects {user, loginTime, logoutTime}. What is the maximum number of concurrent users logged in at the same time?
+
+Input:
+[
+  {user: A, login: 1, logout: 3},
+  {user: B, login: 3, logout: 4},
+  {user: C, login: 1, logout: 2},
+  {user: D, login: 123123123, logout: 987987987},
+  {user: E, login: 1, logout: 3}
+]
+
+Output:
+3  
+
+interview Questions
+
+/*
+You have rating (0-10) of the hotels per user in this format:
+
+scores = [
+    {'hotel_id': 1001, 'user_id': 501, 'score': 7},
+    {'hotel_id': 1001, 'user_id': 502, 'score': 7},
+    {'hotel_id': 1001, 'user_id': 503, 'score': 7},
+    {'hotel_id': 2001, 'user_id': 504, 'score': 10},
+    {'hotel_id': 3001, 'user_id': 505, 'score': 5},
+    {'hotel_id': 2001, 'user_id': 506, 'score': 5}
+]
+
+Any given hotel might have more than one score.
+
+Implement a function, get_hotels(scores, min_avg_score) that returns a list of hotel ids that have average score equal to or higher than min_avg_score.
+
+get_hotels(scores, 5) -> [1001, 2001, 3001]
+get_hotels(scores, 7) -> [1001, 2001]
+*/  
+
+Interview Questions
+
+After greetings and introduction the questions were asked in the following order:
+
+Q0: What do you know about Booking.com?
+A0: Booking.com is one of the world's leading e-commerce companies, that helps to find accommodation.
+
+Q1: Do you know the business model of Booking.com? How does Booking get their revenue?
+A1: Commissions on bookings, etc..
+
+Q2-10: You current work, responsibilities, experience in programming, experience in programming in Perl, have you developed projects from scratch?
+
+Then she gave a brief information about company, technologies they use, the small agile teams, the whole working process.
+
+Q11: What salary do you expect?
+A11: Many interviewers advice not to tell the expected salary, but it depends on you.
+
+Q12: Do you have any questions?
+A12: ***  
+
+Interview Questions
+
+Identify whether there exists a pair of numbers in an array such that their sum is equal to N
+
+Input:
+The first line contains one integer N, which is the sum we are trying to find;
+The second line contains one integer M, which is length of the array;
+This is followeb by M lines each containing one element of the array;
+
+Output:
+Output 1 if there exists a pair of numbers in the array such that their sum equals N. If such a pair does not exist, output 0.
+
+Note:
+The array must be sorted.  
+
+Interview Questions
+
+input
+log = [
+  { 'user': 'A', 'page': 1},
+  { 'user': 'B', 'page': 5},
+  { 'user': 'A', 'page': 2},
+  { 'user': 'A', 'page': 1},
+  { 'user': 'B', 'page': 2},
+  { 'user': 'C', 'page': 7},
+  { 'user': 'C', 'page': 3},
+  { 'user': 'A', 'page': 3},
+  { 'user': 'C', 'page': 1},
+]
+
+please implement
+discover_site_map(log)
+
+discover_site_map returns a representation of the links between pages, using whatever data structure you think is suitable:
+1 -> 2, 3
+2 -> 1
+3 -> 1
+5 -> 2
+7 -> 3   … 
+Show More
+Given any number of arrays containing numbers, write a function which
+finds the numbers that appear in exactly two arrays.
+
+arrays = [
+    [6, 2, 2, 0, 4],
+    [5, 0, 2, 6, 7, 1],
+    [6, 7, 9, 9],
+]
+
+find_in_two(arrays) should return [2, 0, 7]  
+
+
+Interview Questions
+
+Union of n arrays with x elements. Output common members contained in at least 2 arrays. Explain the complexity of the algorithm used.
+
+We have a digested server log with username, visited page and timestamp. Create a processing algorithm that will output the most visited page/areas in such a way that will match partial path as well.
+i.e.
+{
+    { user: "user1", page="/home" },
+    { user: "user1", page="/home/account" },
+    { user: "user1", page="/home/account/profile" },
+    { user: "user1", page="/home/account/login" },
+    { user: "user2", page="/about" },
+    { user: "user2", page="/about/contact" },
+    { user: "user2", page="/home" }
+}
+
+the output
+user1
+     - home/account
+     - home
+user2
+     - /about
+
+PS
+I'm rephrasing because I cannot recall exactly the question  
+4 Answers
+
+
+Develop algorithms and talk about its efficiency using Big O notation.  
+
+
+What's the time complexity of your solution? Can you make it linear?  
+
+
+Check the string for the correct using of parenthesis. They can be (), [], {}.  
+
+HR round - to understand interest level, work experience and knowledge about Booking.com  
+Answer Question
+Retweet twitter tweets if newer one is an anagram of older one.  
+Answer Question
+20 boxes - 500 GB log files on each - no processing box on server file, aggregate data on one box and parse for phone numbers - bookings. Efficiently.  
+Answer Question
+
+interview Questions
+
+Call a function F in a loop. F returns a string of 140 chars. Write to the output 1 when F returns a string with the same letters (basically a permutation) of a string previously returned. (the question was not this well formed)  
+4 Answers
+Given a map user-> list of locations, write a function that takes a location and suggest what the next location an user would go  
+1 Answer
+Share on Facebook
+Share on Twitter
+Share via Email
+Copy Link
+
+Interview Questions
+
+Given a string of parentheses, check if the parentheses are balanced. Then the question was extended to all types of brackets.  
+2 Answers
+Output the words found in a stream of characters.
+    - Input: Dictionary<string>, Stream
+    - Output: Dictionary containing words and their occurences.
+    - Complexity, best case, worst case  
+2 Answers
+System design question: Write autocomplete functionality like booking.com  
+1 Answer
+
+Interview Questions
+
+Just one question: shift an array to the right by n positions such that the right most indexes are become the first ones and the first ones move ahead.
+like:
+1 2 3 4 5 --> shift by 2 --> 4 5 1 2 3  
+7 Answers
+Just one question: shift an array to the right by n positions such that the right most indexes are become the first ones and the first ones move ahead.
+like:
+1 2 3 4 5 --> shift by 2 --> 4 5 1 2 3  
+Answer Question
+
+
+Find how many moves it takes from point A in a maze to point B.  
+
+interview Questions
+
+
+Finding the knights tour on a chess board ?  
+Answer Question
+How will you implement auto-complete ?  
+2 Answers
+
+Interview Questions
+
+Check if the parentheses are balanced?  
+Answer Question
+Can you construct some sentence from a list of provided words?  
+1 Answer
+Share on Facebook
+Share on Twitter
+Share via Email
+Copy Link
+
+Interview Questions
+
+Given a text file containing the text for Hamlet (/usr/share/file.txt), return the top 5 most frequent words with count.  
+4 Answers
+How the array from the previous question is stored in memory and what is an optimal way to access the value of a specific key.  
+Answer Question
+You have a long set of numbers. More than 400k. How would you search if a specific number is in set? They expect a better solution than looping the set until you find the number.  
+5 Answers
+
+Interview Questions
+
+array intersection and combination  
+Answer Question
+number system conversion  
+Answer Question
+
+
+The Knight's Tour  
+
+
