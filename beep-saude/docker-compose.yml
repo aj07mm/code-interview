@@ -1,0 +1,35 @@
+version: '2'
+services:
+    webapp:
+        build:
+            context: .
+            dockerfile: ./docker_files/webapp/Dockerfile
+        volumes:
+            - .:/code
+        ports:
+            - "80:80"
+        restart: always
+    flask:
+        build:
+            context: .
+            dockerfile: ./docker_files/flask/Dockerfile
+        command: flask run --host=0.0.0.0
+        stdin_open: true
+        tty: true
+        environment:
+            - PYTHONPATH=/code/src
+            #- PYTHONIOENCODING=utf8
+            - FLASK_APP=./src/app.py
+            - FLASK_DEBUG=1
+            - CURRENCY_LAYER_ACCESS_KEY=70f0ac822ea9ec86d80f3ac1cf6f40b9
+        ports:
+            - "5000:5000"
+        volumes:
+            - .:/code
+        links:
+            - redis
+        depends_on:
+            - webapp
+        restart: always
+    redis:
+        image: redis
