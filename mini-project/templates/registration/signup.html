@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container docs-example docs-example-forms">
+        <form method="post">
+            {% csrf_token %}
+            {% for field in user_form %}
+                <div class="row">
+                    <div class="u-full-width">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {% if field.help_text %}
+                            <small style="display: none">{{ field.help_text }}</small>
+                        {% endif %}
+                    </div>
+                </div>
+                <br>
+                {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+            <button type="submit" class="u-full-width">Sign up</button>
+        </form>
+    </div>
+{% endblock %}
+
+
