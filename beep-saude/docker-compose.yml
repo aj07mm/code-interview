@@ -21,7 +21,7 @@ services:
             #- PYTHONIOENCODING=utf8
             - FLASK_APP=./src/app.py
             - FLASK_DEBUG=1
-            - CURRENCY_LAYER_ACCESS_KEY=70f0ac822ea9ec86d80f3ac1cf6f40b9
+            - CURRENCY_LAYER_ACCESS_KEY=9720a08ce0628ad3b88c2f9fa8ae2acf
         ports:
             - "5000:5000"
         volumes:
