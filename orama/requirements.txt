@@ -1,4 +1,4 @@
-Django==1.9.4
+Django==1.11.29
 django-bower==5.1.0
 django-registration-redux==1.4
 six==1.10.0
